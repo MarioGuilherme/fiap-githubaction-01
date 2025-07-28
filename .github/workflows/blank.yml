@@ -1,0 +1,20 @@
+name: Meu Primeiro Workflow no Github Actions
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  job01:
+    runs-on: ubuntu-latest
+
+    # Precisa de 1 ou mais steps
+    steps:
+      - uses: actions/checkout@v4 # Baixa o projeto para "dentro" do runner
+      - name: Run a one-line script
+        run: echo Olá, turma da disciplina Github Actions.
